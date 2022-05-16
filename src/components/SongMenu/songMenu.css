@@ -1,0 +1,41 @@
+.SongMenu {
+    position: relative;
+    padding: 10px 30px;
+    height: 100%;
+    border-right: 5px solid #000;
+}
+.SongMenu h1 {
+    font-size: 80px;
+}
+.SongMenu ul {
+    list-style-type: none;
+}
+.SongMenu ul li {
+    font-size: 40px;
+    font-weight: 500;
+    width: max-content;
+}
+.SongMenu .getMore {
+    position: absolute;
+    bottom: 10px;
+    left: 30px;
+    text-decoration: none;
+}
+@media (max-width: 991px) {
+    .SongMenu ul {
+        display: flex;
+        margin-bottom: 25px;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    .SongMenu ul li {
+        font-size: 20px;
+    }
+    .SongMenu .getMore {
+        text-align: center;
+    }
+    .SongMenu {
+        border-right: 0;
+        border-bottom: 5px solid black;
+    }
+}

@@ -1,0 +1,86 @@
+.Buy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: relative;
+}
+.Buy h1 {
+    margin: 25px auto;
+}
+.song_img {
+    width: 30vh;
+    position: relative;
+}
+.song_price {
+    position: absolute;
+    top: -30px;
+    right: -30px;
+
+    background-color: #fcd51a;
+    border: 3px solid #000;
+    border-radius: 50%;
+    font-size: 28px;
+    width: 75px;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wishlist {
+    position: absolute;
+    left: -50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.wishlist p {
+    font-size: 12px !important;
+}
+.Buy p {
+    font-size: 14px;
+}
+.Buy .song_name {
+    font-size: 40px;
+
+    line-height: 35px;
+}
+.Buy .artist_name {
+    font-size: 25px;
+    font-weight: 500;
+}
+.player {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+.player .playbar {
+    min-width: 300px;
+}
+.btnbox {
+    display: flex;
+    flex-wrap: wrap;
+}
+.btnbox button {
+    margin: 20px 10px;
+    font-size: 20px;
+    background-color: transparent;
+    border: 5px solid #000;
+    border-radius: 40px;
+    padding: 5px 45px;
+}
+.back_button {
+    position: absolute;
+    bottom: 15px;
+    right: 10px;
+    background-color: #fcd51a;
+    border: 5px solid #000;
+    border-radius: 50%;
+    transform: rotate(-90deg);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

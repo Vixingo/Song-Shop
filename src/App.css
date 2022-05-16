@@ -1,38 +1,82 @@
-.App {
-  text-align: center;
+@font-face {
+    font-family: roc;
+    src: url(./fonts/FontsFree-Net-RocGrotesk.ttf);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: roc;
+}
+a {
+    color: unset !important;
+    text-decoration: none;
+}
+a:hover {
+    text-shadow: 2px 1px 3px #fcd51a;
+}
+button {
+    cursor: pointer;
+}
+body {
+    background-color: #00f5d4;
+}
+.app {
+    display: grid;
+    place-items: center;
+    background-color: #00f5d4;
+    height: 100vh;
+}
+.app__body {
+    display: flex;
+    background-color: #00f5d4;
+    height: 80vh;
+    border: 5px solid #000;
+    width: 90vw;
+    margin-bottom: 30px;
+    margin-top: -20px;
+    /* box-shadow: -1px 4px 20px -6px rgba(0, 0, 0, 0.7); */
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.col {
+    flex: 1 0 0%;
+}
+.col-md {
+    flex: 1 0 0%;
+    width: 100%;
+}
+.col-md-5 {
+    flex: 0 0 auto;
+    width: 41.66666667%;
+}
+.col-md-6 {
+    flex: 0 0 auto;
+    width: 50%;
+}
+.col-md-7 {
+    flex: 0 0 auto;
+    width: 58.33333333%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@media (max-width: 991px) {
+    .col-md-7,
+    .col-md-6,
+    .col-md-5 {
+        width: 100%;
+    }
+    .app__body {
+        height: 100vh;
+        margin-top: 10px;
+        margin-bottom: 30px;
+    }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@media (max-width: 767px) {
+    .app__body {
+        height: 113vh;
+    }
 }
