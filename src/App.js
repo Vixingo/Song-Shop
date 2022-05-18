@@ -13,8 +13,11 @@ import Filter from "./components/Filter/Filter";
 import FilteredList from "./components/Filter/FilteredList";
 
 function App() {
-    const [data, setData] = useState();
+    const [data, setData] = useState([]);
 
+    useEffect(() => {
+        console.log(data);
+    });
     return (
         <>
             <BrowserRouter>

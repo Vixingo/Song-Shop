@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SearchSharpIcon from "@mui/icons-material/SearchSharp";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
@@ -23,6 +23,26 @@ function Filter({ setData }) {
 
     const [searchString, setSearchString] = useState("");
 
+    useEffect(() => {
+        console.log(fchoir);
+    });
+
+    const dofilter = () => {
+        const FD = [];
+        if (searchString !== "") {
+            FD.push(searchString);
+            console.log(FD);
+        }
+
+        if (active !== "") {
+            // setData(["Mixed choir"]);
+            FD.push("Mixed choir");
+        } else {
+            console.log("not clicked");
+        }
+
+        setData(FD);
+    };
     return (
         <>
             <div className="Filter">
@@ -374,9 +394,7 @@ function Filter({ setData }) {
                     <div className="btnbox">
                         <Link
                             to="/get_more_songs/filtered_list"
-                            onClick={() => {
-                                setData(searchString);
-                            }}
+                            onClick={() => dofilter()}
                         >
                             <button> apply</button>
                         </Link>
