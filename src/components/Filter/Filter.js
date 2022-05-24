@@ -18,14 +18,19 @@ function Filter({ setData }) {
     const [active8, setActive8] = useState("");
     const [active9, setActive9] = useState("");
     const [active10, setActive10] = useState("");
+    const [voice, setVoice] = useState("");
+    const [genre, setGenre] = useState("");
+    const [theme, setTheme] = useState("");
+    const [tempo, setTempo] = useState("");
+    const [range, setRange] = useState();
 
-    const [fchoir, setFchoir] = useState([]);
+    // const [fchoir, setFchoir] = useState([]);
 
     const [searchString, setSearchString] = useState("");
 
-    useEffect(() => {
-        console.log(fchoir);
-    });
+    // useEffect(() => {
+    //     console.log(fchoir);
+    // });
 
     const dofilter = () => {
         const FD = [];
@@ -35,14 +40,72 @@ function Filter({ setData }) {
         }
 
         if (active !== "") {
-            // setData(["Mixed choir"]);
-            FD.push("Mixed choir");
-        } else {
-            console.log("not clicked");
+            FD.push("Mixed Choir");
         }
+        if (active2 !== "") {
+            FD.push("Women’s choir");
+        }
+
+        if (active3 !== "") {
+            FD.push("Men’s choir");
+        }
+
+        if (active4 !== "") {
+            FD.push("Children’s choir");
+        }
+        if (active5 !== "") {
+            FD.push("nl");
+        }
+        if (active6 !== "") {
+            FD.push("eng");
+        }
+        if (active7 !== "") {
+            FD.push("fr");
+        }
+        if (active8 !== "") {
+            FD.push("es");
+        }
+        if (active9 !== "") {
+            FD.push("de");
+        }
+        if (active10 !== "") {
+            FD.push("it");
+        }
+        if (voice !== "") {
+            FD.push(voice);
+        }
+        if (genre !== "") {
+            FD.push(genre);
+        }
+        if (theme !== "") {
+            FD.push(theme);
+        }
+        if (tempo !== "") {
+            FD.push(tempo);
+        }
+        if (range == 0) {
+            console.log("lll");
+            FD.push("Beginner");
+        }
+        if (range == 1) {
+            console.log("in");
+            FD.push("Intermediate");
+        }
+        if (range == 2) {
+            console.log("ad");
+            FD.push("Advanced");
+        }
+
+        //  else {
+        //     console.log("not clicked");
+        // }
 
         setData(FD);
     };
+
+    useEffect(() => {
+        console.log(range);
+    });
     return (
         <>
             <div className="Filter">
@@ -195,21 +258,32 @@ function Filter({ setData }) {
                             <h1>voicing</h1>
                             <div className="custom_select">
                                 <ArrowDropDownIcon className="custom_icon" />
-                                <select name="" id="">
+                                <select
+                                    value={voice}
+                                    onChange={(e) => setVoice(e.target.value)}
+                                >
                                     <option value="">Select voicing</option>
-                                    <option value="">unison</option>
-                                    <option value="">2-part</option>
-                                    <option value="">3-part</option>
-                                    <option value="">SA</option>
-                                    <option value="">SATB</option>
-                                    <option value="">SATB divisi</option>
-                                    <option value="">SAB</option>
-                                    <option value="">SSA divisi</option>
-                                    <option value="">TB</option>
-                                    <option value="">TTB/TBB</option>
-                                    <option value="">TTBB</option>
-                                    <option value="">TTBB divisi</option>
-                                    <option value="">Double choir</option>
+                                    <option value="unison">unison</option>
+                                    <option value="2-part">2-part</option>
+                                    <option value="3-part">3-part</option>
+                                    <option value="SA">SA</option>
+                                    <option value="SATB">SATB</option>
+                                    <option value="SATB divisi">
+                                        SATB divisi
+                                    </option>
+                                    <option value="SAB">SAB</option>
+                                    <option value="SSA divisi">
+                                        SSA divisi
+                                    </option>
+                                    <option value="TB">TB</option>
+                                    <option value="TTB/TBB">TTB/TBB</option>
+                                    <option value="TTBB">TTBB</option>
+                                    <option value="TTBB divisi">
+                                        TTBB divisi
+                                    </option>
+                                    <option value="double choir">
+                                        Double choir
+                                    </option>
                                 </select>
                             </div>
                         </div>
@@ -217,23 +291,36 @@ function Filter({ setData }) {
                             <h1>genre</h1>
                             <div className="custom_select">
                                 <ArrowDropDownIcon className="custom_icon" />
-                                <select name="" id="">
+                                <select
+                                    value={genre}
+                                    onChange={(e) => setGenre(e.target.value)}
+                                >
                                     <option value="">Select genre</option>
-                                    <option value="">Pop & rock</option>
-                                    <option value="">Film</option>
-                                    <option value="">Tv</option>
-                                    <option value="">musical</option>
-                                    <option value="">sacred</option>
-                                    <option value="">contemporary</option>
-                                    <option value="">gospel & spiritual</option>
-                                    <option value="">a capella</option>
-                                    <option value="">barbershop</option>
-                                    <option value="">classical</option>
-                                    <option value="">children</option>
-                                    <option value="">latin</option>
-                                    <option value="">Country</option>
-                                    <option value="">Blues</option>
-                                    <option value="">r&b/soul</option>
+                                    <option value="Pop & Rock">
+                                        Pop & rock
+                                    </option>
+                                    <option value="Film">Film</option>
+                                    <option value="TV & Musical">
+                                        TV & Musical
+                                    </option>
+
+                                    <option value="Sacred">Sacred</option>
+                                    <option value="Contemporary">
+                                        contemporary
+                                    </option>
+
+                                    <option value="Barbershop">
+                                        Barbershop
+                                    </option>
+                                    <option value="Classical">Classical</option>
+                                    <option value="Children">Children</option>
+                                    <option value="Latin">Latin</option>
+                                    <option value="Country">Country</option>
+                                    <option value="Blues">Blues</option>
+                                    <option value="Jazz">Jazz</option>
+                                    <option value="World">World</option>
+                                    <option value="Opera">Opera</option>
+                                    <option value="R&B/Soul">R&B/Soul</option>
                                 </select>
                             </div>
                         </div>
@@ -244,13 +331,18 @@ function Filter({ setData }) {
                             <h1>Theme</h1>
                             <div className="custom_select">
                                 <ArrowDropDownIcon className="custom_icon" />
-                                <select name="" id="">
+                                <select
+                                    value={theme}
+                                    onChange={(e) => setTheme(e.target.value)}
+                                >
                                     <option value="">Select theme</option>
-                                    <option value="">Wedding</option>
-                                    <option value="">Christmas</option>
-                                    <option value="">Holiday</option>
-                                    <option value="">medley</option>
-                                    <option value="">funeral/memorial</option>
+                                    <option value="Wedding">Wedding</option>
+                                    <option value="Christmas">Christmas</option>
+                                    <option value="Holiday">Holiday</option>
+                                    <option value="Medley">medley</option>
+                                    <option value="Funeral/Memorial">
+                                        funeral/memorial
+                                    </option>
                                 </select>
                             </div>
                         </div>
@@ -258,14 +350,17 @@ function Filter({ setData }) {
                             <h1>tempo</h1>
                             <div className="custom_select">
                                 <ArrowDropDownIcon className="custom_icon" />
-                                <select name="" id="">
+                                <select
+                                    value={tempo}
+                                    onChange={(e) => setTempo(e.target.value)}
+                                >
                                     <option value="">Select tempo</option>
 
-                                    <option value="">Ballad</option>
-                                    <option value="">Medium</option>
-                                    <option value="">up tempo</option>
+                                    <option value="Ballad">Ballad</option>
+                                    <option value="Medium">Medium</option>
+                                    <option value="Up tempo">up tempo</option>
 
-                                    <option value="">Changing</option>
+                                    <option value="Changing">Changing</option>
                                 </select>
                             </div>
                         </div>
@@ -375,6 +470,8 @@ function Filter({ setData }) {
                                     type="range"
                                     min={"0"}
                                     max={"2"}
+                                    value={range}
+                                    onChange={(e) => setRange(e.target.value)}
                                     className="slider"
                                 />
                                 <div className="bia">

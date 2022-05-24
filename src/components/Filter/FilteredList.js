@@ -1,29 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import songnames from "../../songnames.json";
 import SongData from "../SongData/SongData";
 import "./Filter.css";
+import FilteredItem from "./FilteredItem";
 function FilteredList({ data }) {
-    const [searchedArray, setSearchedArray] = React.useState(songnames);
+    // const [searchedArray, setSearchedArray] = React.useState(songnames);
 
-    React.useEffect(() => {
-        if (data.length !== 0) {
-            const searchedObjects = [];
-            songnames.forEach((singleHeroObject, index) => {
-                // console.log(singleHeroObject);
-                Object.values(singleHeroObject).map((onlyValues, valIndex) => {
-                    if (
-                        onlyValues.toLowerCase().includes(data[0].toLowerCase())
-                    ) {
-                        searchedObjects.push(singleHeroObject);
-                        return;
-                    }
-                });
-            });
-            setSearchedArray(searchedObjects);
-        } else {
-            setSearchedArray(songnames);
-        }
-    }, [data]);
+    // const [searchedItem, setSearchedItem] = useState();
+
+    // React.useEffect(() => {
+    //     if (data.length !== 0) {
+    //         const searchedObjects = [];
+    //         songnames.forEach((singleHeroObject, index) => {
+    //             // console.log(singleHeroObject);
+    //             Object.values(singleHeroObject).map((onlyValues, valIndex) => {
+    //                 if (
+    //                     onlyValues.toLowerCase().includes(data[0].toLowerCase())
+    //                 ) {
+    //                     searchedObjects.push(singleHeroObject);
+    //                     return;
+    //                 }
+    //             });
+    //         });
+    //         setSearchedArray(searchedObjects);
+    //         console.log(searchedObjects);
+    //     } else {
+    //         setSearchedArray(songnames);
+    //     }
+    // }, [data]);
 
     return (
         <>
@@ -38,16 +42,39 @@ function FilteredList({ data }) {
                                 </h4>
                             </div>
                             <>
-                                <div className="filter_result">
-                                    {searchedArray.map((sed, index) => {
-                                        return (
-                                            <SongData
-                                                song_name={sed.songName}
-                                                artist_Name={sed.artistName}
-                                            />
+                                <FilteredItem keyw={keyw} />
+                                {/* <div className="filter_result"> */}
+                                {/* {keyw ? newtech(keyw) : ""} */}
+                                {/* {songnames.forEach(
+                                    (singleHeroObject, index) => {
+                                        Object.values(singleHeroObject).map(
+                                            (onlyValues, valIndex) => {
+                                                if (
+                                                    onlyValues
+                                                        .toLowerCase()
+                                                        .includes(
+                                                            keyw.toLowerCase()
+                                                        )
+                                                ) {
+                                                    return (
+                                                        <p>
+                                                            {
+                                                                singleHeroObject.songName
+                                                            }
+                                                        </p>
+                                                    );
+                                                } else {
+                                                    <h1>No data</h1>;
+                                                }
+                                            }
                                         );
-                                    })}
-                                </div>
+                                    }
+                                )} */}
+
+                                {/* {searchedItem.map((sed, index) => {
+                                        return <h2>noo</h2>;
+                                    })} */}
+                                {/* </div> */}
                             </>
                         </>
                     );

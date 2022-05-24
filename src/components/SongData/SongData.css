@@ -34,9 +34,16 @@
 .data1 {
     display: flex;
     flex: 1;
+
     align-items: center;
     flex-wrap: wrap;
+    margin-right: 9px;
+    /* flex-direction: column; */
 }
+.data1 p {
+    flex: 1;
+}
+
 .data2 {
     display: flex;
     align-items: center;
